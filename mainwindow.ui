@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="widget" native="true">
+   <widget class="Desenho" name="widget" native="true">
     <property name="geometry">
      <rect>
       <x>40</x>
@@ -24,7 +24,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>40</x>
@@ -88,23 +88,6 @@
     </layout>
    </widget>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>801</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menuFile">
-    <property name="title">
-     <string>Arquivo</string>
-    </property>
-    <addaction name="actionDimensoes"/>
-   </widget>
-   <addaction name="menuFile"/>
-  </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <widget class="QToolBar" name="toolBar">
    <property name="windowTitle">
@@ -117,13 +100,112 @@
     <bool>false</bool>
    </attribute>
    <addaction name="actionDimensoes"/>
+   <addaction name="actionInserir_Voxel"/>
+   <addaction name="actionRetirar_Voxel"/>
+   <addaction name="actionInserir_Caixa"/>
+   <addaction name="actionRetirar_Caixa"/>
+   <addaction name="actionInserir_Esfera"/>
+   <addaction name="actionRetirar_Esfera"/>
+   <addaction name="actionInserir_Elipse"/>
+   <addaction name="actionRetirar_Elipse"/>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>801</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuEscultor">
+    <property name="title">
+     <string>Escultor</string>
+    </property>
+    <addaction name="actionDimensoes"/>
+    <addaction name="actionInserir_Voxel"/>
+    <addaction name="actionRetirar_Voxel"/>
+    <addaction name="actionInserir_Caixa"/>
+    <addaction name="actionRetirar_Caixa"/>
+    <addaction name="actionInserir_Esfera"/>
+    <addaction name="actionRetirar_Esfera"/>
+    <addaction name="actionInserir_Elipse"/>
+    <addaction name="actionRetirar_Elipse"/>
+   </widget>
+   <widget class="QMenu" name="menuArquivo">
+    <property name="title">
+     <string>Arquivo</string>
+    </property>
+    <addaction name="actionSalvar"/>
+    <addaction name="actionSair"/>
+   </widget>
+   <addaction name="menuArquivo"/>
+   <addaction name="menuEscultor"/>
   </widget>
   <action name="actionDimensoes">
    <property name="text">
     <string>Dimensoes</string>
    </property>
   </action>
+  <action name="actionSalvar">
+   <property name="text">
+    <string>Salvar</string>
+   </property>
+  </action>
+  <action name="actionSair">
+   <property name="text">
+    <string>Sair</string>
+   </property>
+  </action>
+  <action name="actionInserir_Voxel">
+   <property name="text">
+    <string>Inserir Voxel</string>
+   </property>
+  </action>
+  <action name="actionRetirar_Voxel">
+   <property name="text">
+    <string>Retirar Voxel</string>
+   </property>
+  </action>
+  <action name="actionInserir_Caixa">
+   <property name="text">
+    <string>Inserir Caixa</string>
+   </property>
+  </action>
+  <action name="actionRetirar_Caixa">
+   <property name="text">
+    <string>Retirar Caixa</string>
+   </property>
+  </action>
+  <action name="actionInserir_Esfera">
+   <property name="text">
+    <string>Inserir Esfera</string>
+   </property>
+  </action>
+  <action name="actionRetirar_Esfera">
+   <property name="text">
+    <string>Retirar Esfera</string>
+   </property>
+  </action>
+  <action name="actionInserir_Elipse">
+   <property name="text">
+    <string>Inserir Elipse</string>
+   </property>
+  </action>
+  <action name="actionRetirar_Elipse">
+   <property name="text">
+    <string>Retirar Elipse</string>
+   </property>
+  </action>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>Desenho</class>
+   <extends>QWidget</extends>
+   <header>desenho.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections>
   <connection>
@@ -174,5 +256,24 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>actionSair</sender>
+   <signal>triggered(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>fecharProg()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>400</x>
+     <y>308</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
+ <slots>
+  <slot>fecharProg()</slot>
+ </slots>
 </ui>

@@ -11,8 +11,11 @@ void Desenho::paintEvent(QPaintEvent *event){
     QPainter painter(this);
     QBrush brush;
     QPen pen;
-    brush.setColor(Qt::white); //fundo branco
+    brush.setColor(QColor(218,218,218)); //fundo branco
     brush.setStyle(Qt::SolidPattern); //cor solida
-    pen.setColor(Qt::black); //cor da caneta
-    pen.setWidth(3); //pixels de largura do traço
+    pen.setColor(QColor(0,0,0)); //cor da caneta
+    pen.setWidth(2); //pixels de largura do traço
+    painter.setBrush(brush);
+    painter.setPen(pen);
+    painter.drawRect(0,0,width(),height());
 }
