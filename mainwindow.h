@@ -17,6 +17,7 @@ public:
 
 public slots:
     void fecharProg();
+    void abreDimensoes();
 
 private:
     Ui::MainWindow *ui;

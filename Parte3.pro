@@ -18,6 +18,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     Sculptor.cpp \
     desenho.cpp \
+    dialogdimensoes.cpp \
     main.cpp \
     mainwindow.cpp
 
@@ -25,9 +26,11 @@ HEADERS += \
     Sculptor.h \
     Voxel.h \
     desenho.h \
+    dialogdimensoes.h \
     mainwindow.h
 
 FORMS += \
+    dialogdimensoes.ui \
     mainwindow.ui
 
 # Default rules for deployment.
