@@ -4,6 +4,7 @@
 #include "dialogdimensoes.h"
 #include "Sculptor.h"
 #include <QDebug>
+#include <QMessageBox>
 
 using namespace std;
 
@@ -16,6 +17,7 @@ MainWindow::MainWindow(QWidget *parent)
             SIGNAL(triggered(bool)),
             this,
             SLOT(abreDimensoes()));
+
 }
 
 MainWindow::~MainWindow(){
@@ -27,9 +29,12 @@ void MainWindow::fecharProg(){
 }
 
 void MainWindow::abreDimensoes(){
-    DialogDimensoes dimx, dimy, dimz;
-    if(dimx.exec()||dimy.exec()||dimz.exec()==QDialog::Accepted){
-        qDebug() << dimx.leDimX() << dimy.leDimY() << dimz.leDimZ();
+    if(d.exec()==QDialog::Accepted){
+        ui->widgetDesenho->setX(d.leDimX());
+        ui->widgetDesenho->setY(d.leDimY());
+        ui->horizontalSliderPlanoZ->setMaximum(d.leDimZ());
+        repaint();
+        //dims = new Sculptor(d.leDimX(),d.leDimY(),d.leDimZ());
     }
 }
 

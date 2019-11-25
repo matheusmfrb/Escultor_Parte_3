@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="Desenho" name="widget" native="true">
+   <widget class="Desenho" name="widgetDesenho" native="true">
     <property name="geometry">
      <rect>
       <x>40</x>
@@ -44,80 +44,37 @@
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
-    <widget class="QWidget" name="layoutWidget">
+    <widget class="QWidget" name="">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>20</y>
-       <width>391</width>
-       <height>91</height>
+       <x>20</x>
+       <y>40</y>
+       <width>381</width>
+       <height>41</height>
       </rect>
      </property>
-     <layout class="QGridLayout" name="gridLayout">
-      <item row="0" column="0">
-       <widget class="QLabel" name="labelX">
-        <property name="text">
-         <string>Plano X</string>
+     <layout class="QHBoxLayout" name="horizontalLayout_6">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
         </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QSlider" name="horizontalSliderX">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="2">
-       <widget class="QLCDNumber" name="lcdNumberX">
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
-        </property>
-        <property name="segmentStyle">
-         <enum>QLCDNumber::Flat</enum>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="labelY">
-        <property name="text">
-         <string>Plano Y</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="QSlider" name="horizontalSliderY">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="2">
-       <widget class="QLCDNumber" name="lcdNumberY">
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
-        </property>
-        <property name="segmentStyle">
-         <enum>QLCDNumber::Flat</enum>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="labelZ">
         <property name="text">
          <string>Plano Z</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="1">
-       <widget class="QSlider" name="horizontalSliderZ">
+      <item>
+       <widget class="QSlider" name="horizontalSliderPlanoZ">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
        </widget>
       </item>
-      <item row="2" column="2">
-       <widget class="QLCDNumber" name="lcdNumberZ">
+      <item>
+       <widget class="QLCDNumber" name="lcdNumberPlanoZ">
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
         </property>
@@ -170,12 +127,53 @@
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>60</y>
+       <width>271</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="labelEsfera">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Raio</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSlider" name="horizontalSliderEsfera">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLCDNumber" name="lcdNumberEsfera">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="segmentStyle">
+         <enum>QLCDNumber::Flat</enum>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </widget>
    <widget class="QGroupBox" name="groupBoxElipse">
     <property name="geometry">
      <rect>
       <x>480</x>
-      <y>300</y>
+      <y>290</y>
       <width>301</width>
       <height>121</height>
      </rect>
@@ -191,6 +189,117 @@
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>271</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Rx</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLCDNumber" name="lcdNumber">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="segmentStyle">
+           <enum>QLCDNumber::Flat</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Ry</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLCDNumber" name="lcdNumber_2">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="segmentStyle">
+           <enum>QLCDNumber::Flat</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Rz</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_3">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLCDNumber" name="lcdNumber_3">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="segmentStyle">
+           <enum>QLCDNumber::Flat</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
    </widget>
    <widget class="QGroupBox" name="groupBoxCor">
     <property name="geometry">
@@ -351,50 +460,82 @@
    </hints>
   </connection>
   <connection>
-   <sender>horizontalSliderX</sender>
+   <sender>horizontalSliderEsfera</sender>
    <signal>valueChanged(int)</signal>
-   <receiver>lcdNumberX</receiver>
+   <receiver>lcdNumberEsfera</receiver>
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>322</x>
-     <y>507</y>
+     <x>660</x>
+     <y>266</y>
     </hint>
     <hint type="destinationlabel">
-     <x>400</x>
-     <y>504</y>
+     <x>735</x>
+     <y>266</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>horizontalSliderY</sender>
+   <sender>horizontalSlider</sender>
    <signal>valueChanged(int)</signal>
-   <receiver>lcdNumberY</receiver>
+   <receiver>lcdNumber</receiver>
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>325</x>
-     <y>537</y>
+     <x>623</x>
+     <y>368</y>
     </hint>
     <hint type="destinationlabel">
-     <x>398</x>
-     <y>537</y>
+     <x>712</x>
+     <y>370</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>horizontalSliderZ</sender>
+   <sender>horizontalSlider_2</sender>
    <signal>valueChanged(int)</signal>
-   <receiver>lcdNumberZ</receiver>
+   <receiver>lcdNumber_2</receiver>
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>219</x>
-     <y>565</y>
+     <x>628</x>
+     <y>397</y>
     </hint>
     <hint type="destinationlabel">
-     <x>415</x>
-     <y>566</y>
+     <x>729</x>
+     <y>405</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider_3</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcdNumber_3</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>625</x>
+     <y>432</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>749</x>
+     <y>437</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSliderPlanoZ</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcdNumberPlanoZ</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>329</x>
+     <y>540</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>422</x>
+     <y>541</y>
     </hint>
    </hints>
   </connection>

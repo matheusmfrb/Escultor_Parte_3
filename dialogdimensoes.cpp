@@ -6,6 +6,7 @@ DialogDimensoes::DialogDimensoes(QWidget *parent) :
     ui(new Ui::DialogDimensoes)
 {
     ui->setupUi(this);
+
 }
 
 DialogDimensoes::~DialogDimensoes()
@@ -13,14 +14,15 @@ DialogDimensoes::~DialogDimensoes()
     delete ui;
 }
 
-QString DialogDimensoes::leDimX(){
-    return ui->lineEditX->text();
+int DialogDimensoes::leDimX(){
+
+    return ui->spinBoxX->value();
 }
 
-QString DialogDimensoes::leDimY(){
-    return ui->lineEditY->text();
+int DialogDimensoes::leDimY(){
+    return ui->spinBoxY->value();
 }
 
-QString DialogDimensoes::leDimZ(){
-    return ui->lineEditZ->text();
+int DialogDimensoes::leDimZ(){
+    return ui->spinBoxZ->value();
 }

@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "Sculptor.h"
+#include "dialogdimensoes.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -21,5 +23,6 @@ public slots:
 
 private:
     Ui::MainWindow *ui;
+    DialogDimensoes d;
 };
 #endif // MAINWINDOW_H

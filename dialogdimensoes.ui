@@ -16,35 +16,35 @@
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="0" column="0">
     <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="0">
-      <widget class="QLabel" name="label">
-       <property name="text">
-        <string>Dimensão X</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="1">
-      <widget class="QLineEdit" name="lineEditX"/>
-     </item>
-     <item row="1" column="0">
+     <item row="1" column="1">
       <widget class="QLabel" name="label_2">
        <property name="text">
         <string>Dimensão Y</string>
        </property>
       </widget>
      </item>
-     <item row="1" column="1">
-      <widget class="QLineEdit" name="lineEditY"/>
-     </item>
-     <item row="2" column="0">
+     <item row="2" column="1">
       <widget class="QLabel" name="label_3">
        <property name="text">
         <string>Dimensão Z</string>
        </property>
       </widget>
      </item>
-     <item row="2" column="1">
-      <widget class="QLineEdit" name="lineEditZ"/>
+     <item row="0" column="1">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Dimensão X</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QSpinBox" name="spinBoxX"/>
+     </item>
+     <item row="1" column="2">
+      <widget class="QSpinBox" name="spinBoxY"/>
+     </item>
+     <item row="2" column="2">
+      <widget class="QSpinBox" name="spinBoxZ"/>
      </item>
     </layout>
    </item>
