@@ -4,6 +4,7 @@
 #include <fstream>
 #include "Sculptor.h"
 #include "Voxel.h"
+#include <QDebug>
 
 using namespace std;
 
@@ -19,6 +20,8 @@ Sculptor::Sculptor(int _nx, int _ny, int _nz){
             }
         }
     }
+    qDebug() << "Sculptor criado!";
+    qDebug() << "Dimensão x: " << nx;
 };
 
 Sculptor::~Sculptor(){

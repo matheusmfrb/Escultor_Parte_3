@@ -2,15 +2,13 @@
 #include <QPainter> //usado para fazer o desenhda área
 #include <QBrush> //usado para preencher a área de desenho
 #include <QPen> // usado para trabalhar o contorno da área de desenho
+#include <QMouseEvent>
 #include "dialogdimensoes.h"
-#include <iostream>
-
-#include <QDebug>
 
 
-using namespace std;
 Desenho::Desenho(QWidget *parent) : QWidget(parent){
     dims = new Sculptor(nx,ny,nz);
+    setMouseTracking(true);
 }
 
 void Desenho::paintEvent(QPaintEvent *event){
@@ -26,11 +24,15 @@ void Desenho::paintEvent(QPaintEvent *event){
     painter.drawRect(0,0,width(),height());
     pen.setWidth(1);
     painter.setPen(pen);
-    for(int i=0;i<width();i+=(width()/nx)){
-        for(int j=0;j<height();j+=(height()/ny)){
+    for(int i=0;i<=width();i+=width()/nx){
+        for(int j=0;j<=height();j+=height()/ny){
             painter.drawRect(i,j,width()/nx,height()/ny);
         }
     }
+}
+
+void Desenho::mousePressEvent(QMouseEvent *event){
+    emit posicaoMouse(event->x(), event->y());
 }
 
 void Desenho::setX(int nx){

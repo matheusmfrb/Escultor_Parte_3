@@ -8,16 +8,18 @@ class Desenho : public QWidget
     Q_OBJECT
 private:
     int nx=10,ny=10,nz=10;
-    Sculptor *dims;
 
 public:
     explicit Desenho(QWidget *parent = nullptr);
     void paintEvent(QPaintEvent *event); //reconfiguração da tela, quando se mexe nas dimensões
+    void mousePressEvent(QMouseEvent *event);
     void setX(int);
     void setY(int);
     void setZ(int);
+    Sculptor *dims;
 
 signals:
+    void posicaoMouse(int, int);
 
 public slots:
 

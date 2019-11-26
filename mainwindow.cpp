@@ -17,6 +17,10 @@ MainWindow::MainWindow(QWidget *parent)
             SIGNAL(triggered(bool)),
             this,
             SLOT(abreDimensoes()));
+    connect(ui->actionSalvar,
+            SIGNAL(triggered(bool)),
+            this,
+            SLOT (salvaArquivo()));
 
 }
 
@@ -33,8 +37,16 @@ void MainWindow::abreDimensoes(){
         ui->widgetDesenho->setX(d.leDimX());
         ui->widgetDesenho->setY(d.leDimY());
         ui->horizontalSliderPlanoZ->setMaximum(d.leDimZ());
+        ui->widgetDesenho->dims->~Sculptor();
+        ui->widgetDesenho->dims = new Sculptor(d.leDimX(),d.leDimY(),d.leDimZ());
         repaint();
-        //dims = new Sculptor(d.leDimX(),d.leDimY(),d.leDimZ());
     }
 }
 
+void MainWindow::desenhaVoxel(){
+
+}
+
+void MainWindow::salvaArquivo(){
+    ui->widgetDesenho->dims->writeOFF("escultor.off");
+}

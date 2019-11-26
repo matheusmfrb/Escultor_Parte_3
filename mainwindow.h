@@ -20,6 +20,8 @@ public:
 public slots:
     void fecharProg();
     void abreDimensoes();
+    void desenhaVoxel();
+    void salvaArquivo();
 
 private:
     Ui::MainWindow *ui;
